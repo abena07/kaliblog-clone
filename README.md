@@ -29,3 +29,8 @@ app; Creating Blog Posts, etc.
 
 **NOTE**: Specific dependency requirements can be found
 in the package.json file
+
+
+##### Issues
+- Image Upload not working **bug**
+- Saving fetched posts from back end as a state not working **bug**
