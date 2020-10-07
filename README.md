@@ -6,14 +6,14 @@
 ![Add Blog Posts](project-images/add-post.png)
 
 
-##### KaliBlog (written using the MERN stack)
+### KaliBlog (written using the MERN stack)
 
-###### Description
+##### Description
 implements the most basic features of a web application including 
 authentication and features particular to a simple blogging
 app; Creating Blog Posts, etc.
 
-###### Features
+##### Features
 - WYSIWYG Editor Suppot (EditorJS)
 - Bootstrap Styled
 - Admin Dashboard (Yet to be implemented)
@@ -21,7 +21,7 @@ app; Creating Blog Posts, etc.
 - Subscription of post (Yet to be implemented)
 
 
-###### Technology Stack
+##### Technology Stack
 - Nodejs (Server-side run-time javascript engine)
 - ExpressJS (Web Framework)
 - React
