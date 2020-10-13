@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
+@import url('variables.css');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #f1f2f3;
+  font-family: 'Roboto', sans-serif;
+  width: 100vw;
+}
+
+
+/* Header Styles */
+header {
+  background: var(--gradient-blue-red-pink);
+  padding: 40px;
+}
+
+header a.brand-name {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+header a.logout{
+  color: #000000;
+  font-size: 1.7rem;
+  margin-left: 2rem;
+}
+
+header .nav-right {
+  float: right;
+  margin-right: 4rem;
+}
+
+header a.add-article {
+  color: #ffffff;
+  background: var(--gradient-green);
+  padding: 0.4rem;
+  display: inline-flex;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 0.3rem;
+  transition: transform 0.09s ease-in;
+}
+
+header a.add-article:hover {
+  transform: scale(1.1);
+}
+
+header .nav-link {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 2rem;
+  background-color: var(--red-pink);
+  padding: 0.5rem 2.4rem;
+  border-radius: 0.8rem;
+}
+
+a:link {
+  outline: none;
+}
+
+header form {
+  width: 10%;
+  display: inline-block;
+}
+
+header input {
+  background: transparent;
+  padding: 0;
+  margin-left: 5rem;
+  transition: width 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  width: 100%;
+}

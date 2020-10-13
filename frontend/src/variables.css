@@ -1,0 +1,8 @@
+:root{
+    --red-pink: #F573C3;
+    --blue: #378EE4;
+    --green: #42DF90;
+    --gradient-blue-red-pink: linear-gradient(90.32deg, #F573C3 0%, #378EE4 100%);
+    --gradient-green: linear-gradient(90.32deg, #42DF90 0%, #149E8E 100%);
+
+}

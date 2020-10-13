@@ -1,0 +1,57 @@
+.detail-blog-container {
+    margin: auto;
+    background-color: #ffffff;
+    max-width: 768px;
+    height: 100vh;
+    padding: 2rem;
+}
+
+.detail-blog-container h2 {
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 37px;
+    text-align: center;
+    margin-bottom: 1.8rem;
+}
+
+.detail-blog-container .sub {
+    color: #9B9A9A;
+    margin-bottom: 1.2rem;
+}
+
+.detail-blog-container .material-icons {
+    font-size: 14px;
+    margin-left: 0.7rem;
+}
+
+.detail-blog-container .subright {
+    float: right;
+}
+
+.detail-blog-container .read-time {
+    margin-right: 0.5rem;
+}
+
+.footer {
+    margin-top: 2rem;
+}
+
+.footer .material-icons {
+    font-size: 24px;
+    margin-right: 0.3rem;
+    cursor: pointer;
+    transition: transform 0.2s ease-in;
+}
+
+.footer .material-icons:active{
+    transform: scale(1.1);
+}
+
+.footer .like {
+    margin-right: 0.7rem;
+    color: var(--blue);
+}
+
+.footer .dislike {
+    color: #9B9A9A;
+}

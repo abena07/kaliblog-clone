@@ -1,0 +1,123 @@
+@import url('../../variables.css');
+
+/* Main Content Container */
+.main-container {
+    margin: 2rem 10rem;
+    height: 100vh;
+}
+
+
+/* Main Blog Styles */
+.blog-container {
+    display: grid;
+    grid-template-columns: 50% auto;
+    gap: 30rem;
+}
+
+/* BlogCard Styles */
+
+.blog-card {
+    color: #000000;
+    display: block;
+    text-decoration: none;
+    min-width: 583px;
+    min-height: 165px;
+    background-color: #fff;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+    border-top: 7px solid var(--blue);
+    padding: 1.8rem;
+    margin: 2.7rem 1rem;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: moveIn ease-in 0.75s;
+    cursor: pointer;
+}
+
+.blog-card:link {
+    outline: none;
+    border: none;
+}
+
+.blog-card:hover {
+    transform: translateX(2%);
+}
+
+.blog-head {
+    margin-bottom: 0.3rem;
+    color: var(--red-pink);
+    font-size: 20px;
+}
+
+.blog-content {
+    margin-bottom: 0.9rem;
+    font-size: 14px;
+}
+
+.blog-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.blog-date, .blog-views {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #9B9A9A;
+}
+
+.blog-date i.material-icons {
+    margin-right: 0.7rem;
+}
+
+.blog-views i.material-icons {
+    margin-right: 0.3rem;
+}
+
+
+/* Blog Card Animation */
+@keyframes moveIn {
+    0% {
+        transform: translateY(30%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/* Styles For RelatedBlogPost Component */
+.blog-right {
+    margin-top: 2.7rem;
+    padding-right: 2rem;
+    width: 100%;
+    max-height: 70vh;
+    border-left: 5px solid var(--red-pink);
+}
+
+.blog-right h2{
+    color: var(--blue);
+    margin-left: 6rem;
+}
+
+.related-blog-card {
+    padding: 0.8rem 1.7rem 1.7rem;
+    margin: 2.7rem 6rem;
+    min-width: 251px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    font-size: 14px;
+}
+
+.related-blog-card h3 {
+    color: var(--red-pink);
+    text-align: center;
+    margin-bottom: 0.4rem;
+}
+
+.related-blog-content {
+    margin-bottom: 0.4rem;
+}
+
+.related-blog-card a {
+    color: #378EE4;
+    float: right;
+}

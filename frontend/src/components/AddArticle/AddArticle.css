@@ -1,0 +1,70 @@
+#publishPost, #writeFont, #notedLaptop {
+    position: absolute;
+}
+
+#publishPost {
+    bottom: 40%;
+    left: 8%;
+}
+
+#writeFont {
+    right: 7%;
+    top: 20%;
+}
+
+#notedLaptop {
+    right: 20%;
+    top: 60%;
+}
+
+.add-post-container {
+    margin: auto;
+    /* background-color: red; */
+    max-width: 768px;
+    height: 100vh;
+    padding: 2rem 5rem;
+}
+
+input, textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid #E5E5E5;
+    padding: 0.8rem 1.2rem;
+    margin-bottom: 2rem;
+}
+
+textarea {
+    border: 3px solid #E5E5E5;
+}
+
+input::placeholder, textarea {
+    font-weight: bold;
+    color: #9B9A9A;
+}
+
+.submit {
+    width: 163px;
+    height: 55px;
+    background: linear-gradient(92.28deg, #378EE4 7.07%, #F573C3 92.9%);
+    border-radius: 35px;
+    float: right;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.2rem 0 1.1rem;
+    cursor: pointer;
+}
+
+.submit span {
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.submit .material-icons {
+    float: right;
+    color: white;
+    font-size: 50px;
+    margin-left: auto;
+}
