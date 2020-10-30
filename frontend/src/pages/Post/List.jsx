@@ -15,8 +15,6 @@ const PostList = () => {
     const blog_context = useContext(blogContext);
     const main_context = useContext(mainContext);
 
-    // console.log(blog_context.state.posts)
-
     useEffect(() => {
         main_context.dispatchAppState({type: "SET_LOADING", is_loading: true})
         axios.get('/api/posts/')

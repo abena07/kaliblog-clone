@@ -1,4 +1,7 @@
 const mongoose = require('mongoose');
+
+const User = require('./user');
+
 const countWords = require('../helpers/utils').countWords;
 const readTime = require('../helpers/utils').readTime;
 
@@ -36,12 +39,14 @@ const postSchema = mongoose.Schema({
         default: Date.now
     },
     upVotes: {
-        type: Number,
-        default: 0
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        unique: true
     },
     doVotes: {
-        type: Number,
-        default: 0
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        unique: true
     },
     views: {
         type: Number,
@@ -52,6 +57,7 @@ const postSchema = mongoose.Schema({
         ref: 'User',
         required: true
     },
+    // comments: [Comment]
 })
 
 
@@ -66,6 +72,8 @@ postSchema.methods.readTime = () => {
 postSchema.set('toJSON', {
     transform: (document, returnedPost) => {
         returnedPost.id = returnedPost._id.toString();
+        // const user = User.findById(returnedPost.user);
+        // returnedPost.author = `${user.firstName} ${user.lastName}`;
         delete returnedPost._id;
         delete returnedPost.__v;
     }

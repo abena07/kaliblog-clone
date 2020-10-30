@@ -10,16 +10,10 @@ const LandingContent = () => {
         " from diverse backgrounds and fields of specialties. Here you get",
         " to read the most catchy and interesting and knowledge based posts about, art, science",
         " technology, politics and many more"]
-
-    // useEffect(()=> {
-    //     const animationContainers = document.querySelectorAll('animateCont');
-    //     animationContainers.classList.add("aos-animate", "aos-init")
-    // }, [])
     useEffect(()=> {
         const animationContainers = document.getElementById('animateCont');
         const rightBg = document.getElementById("right-bg");
         setTimeout(()=> animateElements([animationContainers, rightBg]), 700)
-        // container.classList.add("")
     })
     return (
         <section className={"mb-6 mb-lg-7"} id={'content'}>

@@ -24,7 +24,7 @@ const PostCard = props => {
                             <Moment format={'LLL'}>{props.post.dateCreated}</Moment>
                         </p>
                         <h3 className="card-title">
-                            {postTitle}
+                            {parse(postTitle)}
                             <svg width={22} height={22} className="fill-secondary ml-2 mt-n1"
                                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <title>View Post Detail</title>

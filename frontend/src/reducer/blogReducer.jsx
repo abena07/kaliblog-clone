@@ -7,7 +7,8 @@ export const blogContext = React.createContext()
 
 
 export const initialPosts = {
-    posts: []
+    posts: [],
+    sidebarOpened: false
 }
 
 export const blogReducer = (state, action) => {
@@ -17,6 +18,11 @@ export const blogReducer = (state, action) => {
             return {
                 ...state,
                 posts: action.payload
+            }
+        case "SET_SIDEBAR_OPENED":
+            return {
+                ...state,
+                sidebarOpened: action.opened
             }
         default:
             return initialPosts

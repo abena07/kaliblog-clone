@@ -55,10 +55,11 @@ const CreatePost = () => {
         const savedData = await editorInstance.save();
         sessionStorage.setItem("post", JSON.stringify(savedData));
 
+        savedData.blocks.slice(0, 2);   // Remove Titles
         const postData = {
             title: JSON.stringify(savedData.blocks[1]),
             subTitle: JSON.stringify(savedData.blocks[2]),
-            description: JSON.stringify(savedData.blocks.slice(3, savedData.blocks.length))
+            description: JSON.stringify(savedData)  // b .blocks.slice(3, savedData.blocks.length))
         }
 
         const token = `Token ${getAuthToken()}`;

@@ -67,7 +67,7 @@ const Header = props => {
                                     </a>
                                     <div className="dropdown-menu" aria-labelledby={"user-dropdown"}>
                                         <h6 className="dropdown-header">{auth_context.user.firstName} {auth_context.user.lastName}</h6>
-                                        <Link to="/posts/new" className="text-left dropdown-item pt-0 pb-1">Write Story</Link>
+                                        <Link to="/new/post" className="text-left dropdown-item pt-0 pb-1">Write Story</Link>
 
                                         <a href="#" className="text-left dropdown-item pt-0 pb-1">Profile</a>
                                         <a href="#" className="text-left dropdown-item pt-0 pb-1">Settings</a>

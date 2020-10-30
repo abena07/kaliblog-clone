@@ -15,7 +15,7 @@ import InlineCode from '@editorjs/inline-code'
 import SimpleImage from '@editorjs/simple-image'
 
 
-const imageUploadEndpoint = 'http://localhost:2000/api/post/image/'
+const imageUploadEndpoint = '/api/post/image/'
 
 export const EDITOR_JS_TOOLS = {
     embed: Embed,

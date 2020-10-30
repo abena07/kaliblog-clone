@@ -3,24 +3,25 @@ import { Route, useHistory } from "react-router-dom";
 import axios from 'axios';
 
 // Pages Import Here
-import Home from './pages/Auth/Home';
+import Home from './pages/Home/Home';
 import Login from "./pages/Auth/Login";
+import PostSingle from "./pages/Post/PostSingle/PostSingle";
+import CreatePost from "./pages/Post/Create";
+import PostList from "./pages/Post/List";
+import AuthSuccess from "./pages/Auth/AuthSuccess";
+import Signup from "./pages/Auth/Signup";
 
 import { authContext, authReducer, initialUser } from './reducer/auth';
 import {storeReducer, initialStore} from "./reducer/main";
 
 // Styles here
 import './assets/assets/css/theme.min.css';
-import useScript from "./custom-hooks/useScript";
-import Signup from "./pages/Auth/Signup";
+
+// Utils here
 import {getAuthToken} from "./utils";
-import Loader from "./widgets/Loader";
-import AuthSuccess from "./pages/Auth/AuthSuccess";
-import CreatePost from "./pages/Post/Create";
-import PostList from "./pages/Post/List";
+
 import {blogReducer, initialPosts, blogContext} from "./reducer/blogReducer";
-import PostSingle from "./pages/Post/PostSingle";
-// import
+
 
 export const mainContext = React.createContext();
 
@@ -83,8 +84,8 @@ const App = () => {
 
                 {/*    Blog Post Pages */}
                     <blogContext.Provider value={{state: state, dispatchState: dispatchState}}>
-                        <Route path={'/posts/new'} render={()=> <CreatePost /> } />
-                        <Route exact={true} path={'/posts/'} render={()=> <PostList /> } />
+                        <Route exact={true} path={'/posts'} render={()=> <PostList /> } />
+                        <Route exact={true} path={'/new/post'} render={()=> <CreatePost /> } />
                         <Route path={'/posts/:id'} render={()=> <PostSingle /> } />
                     </blogContext.Provider>
                 </authContext.Provider>
