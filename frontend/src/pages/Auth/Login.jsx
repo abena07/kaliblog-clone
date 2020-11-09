@@ -34,15 +34,7 @@ const Login = () => {
             main_context.dispatchAppState({type: "SET_LOADING", is_loading: true});
             await axios.post('http://localhost:9000/api/auth/login/', user)
                 .then(response=> {
-                    const data = response.data;
-                    const user = {
-                        type: "SET_USER",
-                        firstName: data.firstName,
-                        lastName: data.lastName,
-                        email: data.email
-                    }
-                    auth_context.setUser(user)
-                    localStorage.setItem("auth_token", data.token);
+                    console.log(response.data)
                     main_context.route('/');
                     main_context.dispatchAppState({type: "SET_AUTH", is_authenticated: true})
                     main_context.dispatchAppState({type: "SET_LOADING", is_loading: false})

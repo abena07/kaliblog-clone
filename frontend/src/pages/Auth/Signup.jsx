@@ -42,6 +42,7 @@ const Signup = () => {
             main_context.dispatchAppState({type: "SET_LOADING", is_loading: true})
             axios.post('/api/auth/signup/', user)
                 .then(response => {
+                    console.log(response.data);
                     main_context.route('/registration-success');
                     main_context.dispatchAppState({type: "SET_LOADING", is_loading: false})
                 })

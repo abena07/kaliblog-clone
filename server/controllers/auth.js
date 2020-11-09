@@ -33,6 +33,10 @@ authRouter.post('/login', async (request, response) => {
             response.cookie(
                 'Authorization', `Bearer ${jwt.sign(toToken, config.JWT_SECRET)}`,
                 {httpOnly: true, maxAge: 86_400_000})
+            response.cookie(
+                'authenticated', true,
+                {maxAge: 86_400_000}
+            )
             response.status(200).send({})
             // response.status(200).send(toSend);
         } else {
@@ -43,21 +47,7 @@ authRouter.post('/login', async (request, response) => {
 
 
 authRouter.post('/get-user', async(request, response)=> {
-    const token = getToken(request);
-    try{
-        const decryptedData = jwt.verify(token, process.env.JWT_SECRET);
-        (!token && !decryptedData.id) ? response.status(401).json({error: errorMessages.NOT_AUTHORIZED_401}) : {};
-        const user = await User.findById(decryptedData.id);
-        response.status(200).send({
-            firstName: user.firstName,
-            lastName: user.lastName,
-            email: user.email
-        });
-    } catch(exception) {
-        response.status(500).send({error: exception});
-        console.log(exception)
-        console.log(token);
-    }
+    request.isAuthenticated ? response.status(200).send(request.user) : response.status(404).send({"error": "No user found"})
 })
 
 
