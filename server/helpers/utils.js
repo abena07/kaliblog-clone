@@ -72,6 +72,23 @@ const getToken = request => {
 }
 
 
+const getCookieToken = request => {
+    const cookie = request.headers.cookie;
+    if (!cookie) {
+        return null;
+    }
+    const authItem = cookie.split("; ").find(item=> item.startsWith("Authorization"))
+    if (!authItem) {
+        return null;
+    }
+    const token = authItem.split("Authorization=Bearer%20")[1]
+    if (!token) {
+        return null
+    }
+    return token;
+}
+
+
 const getGridFSInstance = mongooseConn => {
     return Grid(mongooseConn.db, mongoose.mongo);
 }
@@ -167,4 +184,5 @@ module.exports = {
     errorMessages,
     cloudUpload,
     getCloudImage,
+    getCookieToken
 }

@@ -1,10 +1,16 @@
 const postRouter = require('express').Router();
 const Post = require('../models/post');
 const jwt = require('jsonwebtoken');
+const expressJwt = require('express-jwt');
 const User = require('../models/user');
+const config = require('../helpers/config');
+
 
 const getToken = require('../helpers/utils').getToken;
 const errorMessages = require('../helpers/utils').errorMessages;
+
+
+const authenticate = expressJwt({secret: config.JWT_SECRET, algorithms: ["sha1", "RS256", "HS256"]});
 
 /**
  * Get all posts
@@ -38,11 +44,11 @@ postRouter.get('/:id', async(request, response)=> {
 /**
  * Create a post
  */
-postRouter.post('/', async (request, response)=> {
+postRouter.post('/', authenticate, async (request, response)=> {
     const token = getToken(request);
     console.log("jwt Token: ================== : ", token);
     const data = request.body
-    // console.log("Image ")
+    console.log(request.user);
     try {
         const decryptedToken = jwt.verify(token, process.env.JWT_SECRET);
         console.log("Decrypted Token: =============================== :", decryptedToken);

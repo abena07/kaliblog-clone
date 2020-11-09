@@ -2,6 +2,8 @@ const authRouter = require('express').Router();
 const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+const cookie = require('cookie-parser');
+const config = require('../helpers/config')
 
 
 const isEmpty = require('../helpers/utils').isEmpty;
@@ -23,12 +25,16 @@ authRouter.post('/login', async (request, response) => {
         if (valid) {
             const toToken = {email: user.email, id: user.id}
             const toSend = {
-                token: jwt.sign(toToken, process.env.JWT_SECRET),
+                token: jwt.sign(toToken, config.JWT_SECRET),
                 email: user.email,
                 firstName: user.firstName,
                 lastName: user.lastName
             }
-            response.status(200).send(toSend);
+            response.cookie(
+                'Authorization', `Bearer ${jwt.sign(toToken, config.JWT_SECRET)}`,
+                {httpOnly: true, maxAge: 86_400_000})
+            response.status(200).send({})
+            // response.status(200).send(toSend);
         } else {
             response.status(401).send({password: "Password does not match the email you entered"});
         }
